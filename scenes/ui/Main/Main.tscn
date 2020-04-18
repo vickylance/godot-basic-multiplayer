@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ui/Main/Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 233.616
+margin_top = 86.1034
+margin_right = 631.616
+margin_bottom = 302.103
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Send" type="Button" parent="."]
+margin_left = 124.413
+margin_top = 246.354
+margin_right = 207.413
+margin_bottom = 280.354
+text = "Send"
+
+[node name="Create" type="Button" parent="."]
+margin_left = 124.413
+margin_top = 100.325
+margin_right = 207.413
+margin_bottom = 134.325
+text = "Create"
+
+[node name="Join" type="Button" parent="."]
+margin_left = 124.413
+margin_top = 172.927
+margin_right = 207.413
+margin_bottom = 206.927
+text = "Join"
+[connection signal="pressed" from="Send" to="." method="_on_Send_pressed"]
+[connection signal="pressed" from="Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_Join_pressed"]

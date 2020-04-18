@@ -1,0 +1,321 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/ui/DefaultDynamicFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/ui/LobbyScreen/LobbyScreen.gd" type="Script" id=2]
+[ext_resource path="res://ubuntu/Ubuntu-B.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="LobbyScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.663208
+margin_bottom = -0.663208
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lobby" type="VBoxContainer" parent="Panel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_right = -200.0
+rect_min_size = Vector2( 0, 400 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/Lobby"]
+margin_top = 28.0
+margin_right = 400.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 1 )
+text = "Awaiting Players..."
+
+[node name="Margin20_0" type="MarginContainer" parent="Panel/Lobby"]
+margin_top = 60.0
+margin_right = 400.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinedPlayersContainer" type="ColorRect" parent="Panel/Lobby"]
+margin_top = 84.0
+margin_right = 400.0
+margin_bottom = 484.0
+rect_min_size = Vector2( 0, 400 )
+color = Color( 0.211765, 0.207843, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Lobby/JoinedPlayersContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/Lobby/JoinedPlayersContainer/HBoxContainer"]
+margin_right = 400.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Lobby/JoinedPlayersContainer/HBoxContainer/ScrollContainer"]
+margin_right = 400.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin20_1" type="MarginContainer" parent="Panel/Lobby"]
+margin_top = 488.0
+margin_right = 400.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="Panel/Lobby"]
+margin_top = 512.0
+margin_right = 400.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 120, 60 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinLobby" type="Control" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostRect" type="ColorRect" parent="Panel/JoinLobby"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 520.0
+margin_top = 300.0
+margin_right = -40.0
+margin_bottom = -40.0
+color = Color( 0.211765, 0.207843, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/JoinLobby/HostRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostLbl" type="Label" parent="Panel/JoinLobby/HostRect/VBoxContainer"]
+margin_top = 102.0
+margin_right = 680.0
+margin_bottom = 130.0
+size_flags_vertical = 5
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Host a game"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/JoinLobby/HostRect/VBoxContainer"]
+margin_top = 134.0
+margin_right = 680.0
+margin_bottom = 174.0
+rect_min_size = Vector2( 0, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/JoinLobby/HostRect/VBoxContainer"]
+margin_top = 178.0
+margin_right = 680.0
+margin_bottom = 238.0
+alignment = 1
+
+[node name="HostBtn" type="Button" parent="Panel/JoinLobby/HostRect/VBoxContainer/HBoxContainer"]
+margin_left = 280.0
+margin_right = 400.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+text = "Host"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinRect" type="ColorRect" parent="Panel/JoinLobby"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 300.0
+margin_right = -306.0
+margin_bottom = -40.0
+color = Color( 0.211765, 0.207843, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/JoinLobby/JoinRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinLbl" type="Label" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 90.0
+margin_right = 914.0
+margin_bottom = 118.0
+custom_fonts/font = ExtResource( 1 )
+text = "Join an existing game"
+align = 1
+valign = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 122.0
+margin_right = 914.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IpAddrLbl" type="Label" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 136.0
+margin_right = 914.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 1 )
+text = "IP address of the server: "
+
+[node name="MarginContainer5" type="MarginContainer" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 159.0
+margin_right = 914.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IpAddr" type="LineEdit" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 173.0
+margin_right = 914.0
+margin_bottom = 211.0
+rect_min_size = Vector2( 160, 0 )
+custom_fonts/font = ExtResource( 1 )
+placeholder_text = "127.0.0.1"
+placeholder_alpha = 0.4
+
+[node name="MarginContainer4" type="MarginContainer" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 215.0
+margin_right = 914.0
+margin_bottom = 225.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/JoinLobby/JoinRect/VBoxContainer"]
+margin_top = 229.0
+margin_right = 914.0
+margin_bottom = 289.0
+alignment = 1
+
+[node name="JoinBtn" type="Button" parent="Panel/JoinLobby/JoinRect/VBoxContainer/HBoxContainer"]
+margin_left = 397.0
+margin_right = 517.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 120, 60 )
+mouse_default_cursor_shape = 2
+custom_fonts/font = ExtResource( 1 )
+text = "Join"
+
+[node name="GetPlayerName" type="ColorRect" parent="Panel/JoinLobby"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 40.0
+margin_right = -40.0
+margin_bottom = -330.0
+color = Color( 0.211765, 0.207843, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/JoinLobby/GetPlayerName"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 100.0
+margin_right = -100.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel/JoinLobby/GetPlayerName/VBoxContainer"]
+margin_top = 133.0
+margin_right = 1000.0
+margin_bottom = 161.0
+custom_fonts/font = ExtResource( 1 )
+text = "Enter your name:"
+
+[node name="MarginContainer6" type="MarginContainer" parent="Panel/JoinLobby/GetPlayerName/VBoxContainer"]
+margin_top = 165.0
+margin_right = 1000.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 0, 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerName" type="LineEdit" parent="Panel/JoinLobby/GetPlayerName/VBoxContainer"]
+margin_top = 179.0
+margin_right = 1000.0
+margin_bottom = 217.0
+rect_min_size = Vector2( 160, 0 )
+custom_fonts/font = ExtResource( 1 )
+placeholder_text = "Player one"
+placeholder_alpha = 0.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/JoinLobby/HostRect/VBoxContainer/HBoxContainer/HostBtn" to="." method="_on_HostBtn_pressed"]
+[connection signal="pressed" from="Panel/JoinLobby/JoinRect/VBoxContainer/HBoxContainer/JoinBtn" to="." method="_on_JoinBtn_pressed"]
